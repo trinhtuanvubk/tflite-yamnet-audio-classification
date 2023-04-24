@@ -1,8 +1,32 @@
+### Setup environment 
+
+###### With conda env
+- To create conda environment: 
+```bash
+conda create --name yamnet-env python=3.8
+conda activate yamnet-env 
+```
+
+- To install some libs for audio task: 
+```bash
+sudo apt-get update
+sudo apt-get install libsndfile1 -y
+sudo apt-get install ffmpeg -y
+```
+
+- To install requirements:
+```bash
+pip install -r requirements.txt
+```
+
+###### With Docker container 
+- Updated soon 
+
+
 ### Dataset
 
 ###### Prepare data
-
-- To dowload esc50 dataset:
+- To download esc50 dataset:
 ```bash
 python3 main.py --scenario  download_data --dataset_name esc-50
 ```
@@ -27,18 +51,18 @@ python3 main.py --scenario  split_dataset --length_audio 2 --step 0.15
 	- `--length_audio`: length of the splited audio file
 	- `--step`: length of the stride  
 
-
 ###### Data loader 
-- To train test split 
+- To train test split:
 ```bash
 python3 main.py --scenario train_test_split --test_data_ratio 0.2 
 ```
 - Flags: 
 	- `--test_data_ratio`: ratio of test and train data
+
+
 ### Train and Export
 
 - To run training:
-
 ```bash
 python3 main.py --scenario train \
 --model Yamnet \
@@ -56,3 +80,6 @@ python3 main.py --scenario train \
 	- `--batch_size`: num batch size 
 	- `--tflite_file_name`: the tflite model name
 	- `--save_path`: path to directory contains model 
+
+### Build APK file: 
+- Updated soon
