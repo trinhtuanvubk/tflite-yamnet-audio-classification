@@ -83,3 +83,6 @@ python3 main.py --scenario train \
 
 ### Build APK file: 
 - Updated soon
+
+### Notes: 
+- To modify parameters, go to `scenario/args.py` or through command. 
