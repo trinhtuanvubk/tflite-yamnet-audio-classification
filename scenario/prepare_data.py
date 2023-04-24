@@ -9,9 +9,6 @@ import soundfile as sf
 import numpy as np
 import tensorflow as tf
 
-from scenario.args import get_args
-
-
 def test_dataset_size(recording_list):
     assert len(recording_list) == 2000
 
@@ -98,13 +95,3 @@ def split_dataset(args):
                 splited_data = splited_data.T
                 output_file_path = os.path.join(output_category_path, file_name + str(idx) + '.wav')
                 sf.write(output_file_path, splited_data, sr, format='WAV', subtype='PCM_16')
-
-
-# if __name__ == "__main__":
-#     # download_data(dataset_name="esc-50")
-#     # view_metadata()
-#     create_category_dataset()
-#     split_dataset(raw_dataset_path="./esc_raw_dataset/full",
-#                   splited_dataset_path="./esc_custom_dataset_2_015/train",
-#                   length_audio=2,
-#                   stride=0.15)

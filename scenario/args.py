@@ -20,7 +20,7 @@ def get_args():
     
     # params for training model
     parser.add_argument('--use_custom_datset', action='store_true')
-    parser.add_argument('--model', type=str, default='YamnetSpech')
+    parser.add_argument('--model', type=str, default='Yamnet')
     parser.add_argument('--train_data_ratio', type=float, default=0.8)
     parser.add_argument('--tflite_file_name', type=str, default='esc_2s_015.tflite')
     parser.add_argument('--save_path', type=str, default='./model_2s_015')
