@@ -2,7 +2,6 @@ import os
 import glob
 import random
 import shutil
-
 # import librosa
 # import soundfile as sf
 # from IPython.display import Audio
@@ -18,23 +17,22 @@ from tflite_model_maker.config import ExportFormat
 print(f"TensorFlow Version: {tf.__version__}")
 print(f"Model Maker Version: {mm.__version__}")
 
-USE_CUSTOM_DATASET = True
+# USE_CUSTOM_DATASET = True
 
-DATASET_DIR = "./esc_custom_dataset/train"
-TEST_DIR = "./esc_custom_dataset/test"
+# DATASET_DIR = "./esc_custom_dataset/train"
+# TEST_DIR = "./esc_custom_dataset/test"
 
 # DATASET_DIR = "./esc_raw_dataset/train"
 # TEST_DIR = "./esc_raw_dataset/test"
 
-DATASET_DIR = "./esc_custom_dataset_2_015/train"
-TEST_DIR = "./esc_custom_dataset_2_015/test"
+# DATASET_DIR = "./esc_custom_dataset_2_015/train"
+# TEST_DIR = "./esc_custom_dataset_2_015/test"
 
-TFLITE_FILENAME = 'esc_2s_015.tflite'
-SAVE_PATH = './models_saving_2s_015'
+# TFLITE_FILENAME = 'esc_2s_015.tflite'
+# SAVE_PATH = './models_saving_2s_015'
 
-batch_size = 16
-epochs = 100
-
+# batch_size = 16
+# epochs = 100
 
 
 def show_confusion_matrix(confusion, test_labels):
