@@ -60,7 +60,6 @@ def create_category_dataset(args):
             filename = row[0]
             category = row[3]
             category_path = os.path.join(args.raw_dataset_path, category)
-            # if not os.path.isdir(category_path):
             os.makedirs(category_path, exist_ok=True)
             input_path = os.path.join(args.data_path, filename)
             output_path = os.path.join(category_path, filename)
@@ -70,22 +69,17 @@ def create_category_dataset(args):
 def split_dataset(args):
     categories = glob.glob(os.path.join(args.raw_dataset_path, '*'))
     print(categories)
-    # output_categories = os.path.join(splited_dataset_path, categories)
     for category in categories:
         category_name = os.path.basename(os.path.normpath(category))
         output_category_path = os.path.join(
             args.splited_dataset_path, category_name)
         print(output_category_path)
-        # if not os.path.isdir(output_category_path):
         os.makedirs(output_category_path, exist_ok=True)
         files = glob.glob(os.path.join(category, '*.wav'))
         for file in files:
             print(file)
-            # data, sr = librosa.load(file_path, sr=44100)
             file_name = os.path.basename(os.path.normpath(file))
             file_base_name = os.path.splitext(file_name)[0]
-            # with open(file, 'rb') as f: 
-            #     data, sr = sf.read(f, channels=1, samplerate=44100, subtype="FLOAT")
             data, sr = librosa.load(file, sr=44100)
             data = librosa.to_mono(data)
             frame_length = int(sr*args.length_audio)
@@ -93,5 +87,5 @@ def split_dataset(args):
             for idx, frame in enumerate(range(0, len(data)-frame_length, hop_length)):
                 splited_data = data[frame:frame+frame_length]
                 splited_data = splited_data.T
-                output_file_path = os.path.join(output_category_path, file_name + str(idx) + '.wav')
+                output_file_path = os.path.join(output_category_path, file_base_name + str(idx) + '.wav')
                 sf.write(output_file_path, splited_data, sr, format='WAV', subtype='PCM_16')
