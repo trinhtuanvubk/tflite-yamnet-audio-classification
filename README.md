@@ -48,8 +48,8 @@ python3 main.py --scenario  create_category_dataset
 python3 main.py --scenario  split_dataset --length_audio 2 --step 0.15
 ```
 - Flag:
-	- `--length_audio`: length of the splited audio file
-	- `--step`: length of the stride  
+	- `--length_audio`: length of the sliding window
+	- `--step`: length of the hope of the sliding window
 
 ###### Data loader 
 - To train test split:
