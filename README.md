@@ -70,8 +70,8 @@ python3 main.py --scenario train \
 --train_data_ratio 0.8 \
 --epochs 100 \
 --batch_size 16 \
---tflite_file_name esc_2s_015.tflite \
---save_path ./model_2s_015
+--tflite_file_name esc_2s_015_new.tflite \
+--save_path ./model_2s_015_new
 ```
 - Flag:
 	- `--model`: select model (`Yamnet`, `BrowserFft`)
