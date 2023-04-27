@@ -38,7 +38,7 @@ def download_data(args):
                                 cache_dir='./',
                                 cache_subdir='dataset-commands',
                                 extract=True)
-    if args.dataset_name == "backgroud":
+    if args.dataset_name == "background":
         tf.keras.utils.get_file('background_audio.zip',
                                 'https://storage.googleapis.com/download.tensorflow.org/models/tflite/sound_classification/background_audio.zip',
                                 cache_dir='./',
