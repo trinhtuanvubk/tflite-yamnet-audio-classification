@@ -9,6 +9,7 @@ import soundfile as sf
 import numpy as np
 import tensorflow as tf
 
+
 def test_dataset_size(recording_list):
     assert len(recording_list) == 2000
 
@@ -87,5 +88,7 @@ def split_dataset(args):
             for idx, frame in enumerate(range(0, len(data)-frame_length, hop_length)):
                 splited_data = data[frame:frame+frame_length]
                 splited_data = splited_data.T
-                output_file_path = os.path.join(output_category_path, file_base_name + str(idx) + '.wav')
-                sf.write(output_file_path, splited_data, sr, format='WAV', subtype='PCM_16')
+                output_file_path = os.path.join(
+                    output_category_path, file_base_name + str(idx) + '.wav')
+                sf.write(output_file_path, splited_data,
+                         sr, format='WAV', subtype='PCM_16')
